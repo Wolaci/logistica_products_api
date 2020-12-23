@@ -24,4 +24,4 @@ Route::post('products_add', [App\Http\Controllers\ProductController::class, 'sto
 
 Route::put('products_update/{id}', [App\Http\Controllers\ProductController::class, 'update'])->name('products');
 
-Route::delete('products_add/{id}', [App\Http\Controllers\ProductController::class, 'update'])->name('products');
+Route::delete('products_delete/{id}', [App\Http\Controllers\ProductController::class, 'destroy'])->name('products');

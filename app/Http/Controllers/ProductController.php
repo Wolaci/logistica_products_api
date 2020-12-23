@@ -75,7 +75,6 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $products = Product::findOrFail($id);
-        dd($products);
         $products->fill($request->all());
         $products->save();
     }
