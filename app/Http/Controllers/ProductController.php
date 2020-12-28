@@ -49,21 +49,7 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+    
 
     /**
      * Update the specified resource in storage.
@@ -74,9 +60,11 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $products = Product::findOrFail($id);
-        $products->fill($request->all());
-        $products->save();
+        $productData = $request->all();
+        $product = Product::find($id);
+        $product->update($productData);
+        return response()->json("Produto editado com sucesso!");
+        
     }
 
     /**
